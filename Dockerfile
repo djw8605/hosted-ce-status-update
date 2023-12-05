@@ -9,11 +9,9 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
 
 # Copy the application
-COPY . /app
+COPY main.py /app/main.py
+COPY requirements.txt /app/requirements.txt
 WORKDIR /app
 
-# Need to figure out credentials
-
 # Run the application
-CMD ["python3", "main.py"]
-
+ENTRYPOINT ["python3", "main.py"]

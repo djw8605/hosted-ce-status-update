@@ -78,9 +78,9 @@ def process_worksheet(old_worksheet_id, new_worksheet_id):
     print(f'Entry {entry} has an average of {client_cores_avg} client cores and {req_idle_avg} requested idle glideins.')
 
     new_value = 'Unknown'
-    if client_cores_avg > 1:
+    if client_cores_avg > 0:
       new_value = 'Production'
-    elif req_idle_avg < 1:
+    elif req_idle_avg == 0:
       new_value = 'No pressure'
     else:
       new_value = 'Broken'
